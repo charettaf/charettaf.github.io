@@ -1,0 +1,94 @@
+ZooMonitor;
+
+#include <string>;
+#include <iostream>;
+#include <fstream>
+
+namespace std;
+int main()
+
+std::string line;
+ifstream file_("")
+std::cin.get();
+return 0;
+
+export class ZooMonitor
+	{
+	   static void main(std::vector<std::wstring> &args) throw(std::runtime_error)
+	   {
+		   int opt;
+
+		   Scanner *sc = new Scanner(System::in);
+		   ZooMonitor *zm = new ZooMonitor();
+		   while (true)
+		   {
+// Zoo Monitor Menu 
+   std::wcout << L"Choose the option from the MENU" << std::endl;
+   std::wcout << L"------ Menu ------" << std::endl;
+	   std::wcout << L"1. Monitor an animal" << std::endl;
+	   std::wcout << L"2. Monitor a habitat" << std::endl;
+	   std::wcout << L"3. Exit" << std::endl;
+
+	   opt = sc->nextInt();
+	   switch (opt)
+	   {
+	   case 1:
+	   zm->monitorAnimal();
+	   break;
+	   case 2:
+	   zm->monitorHabitat();
+	   break;
+	   default:
+	   std::wcout << L"Invalid Input" << std::endl;
+	   sc->close();
+	   break;
+	   }
+		   }
+           delete zm;
+		   delete sc;
+	   }
+
+   private:
+	   void monitorHabitat() throw(FileNotFoundException)
+	   {
+	   int opt;
+	   int num = 0;
+	   std::wcout << L"------Habitat------" << std::endl;
+
+	   File *file = new File(L"habitat.txt");
+
+	   Scanner *sc = new Scanner(file);
+	   while (sc->hasNext())
+	   {
+		   std::wstring str = sc->nextLine();
+		   std::wcout << str << std::endl;
+		   sc++;
+	   }
+
+	   sc->close();
+
+		   delete sc;
+	   }
+
+	   // animal function.
+	   void monitorAnimal() throw(FileNotFoundException)
+	   {
+		   int opt;
+	   int num = 0;
+	   std::wcout << L"------Animals------" << std::endl;
+
+	   File *file = new File(L"animals.txt");
+
+	   Scanner *sc = new Scanner(file);
+	   while (sc->hasNext())
+	   {
+		   std::wstring str = sc->nextLine();
+		   std::wcout << str << std::endl;
+		   sc++;
+	   }
+
+	   sc->close();
+
+		   delete sc;
+	};
+}

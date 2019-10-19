@@ -1,0 +1,117 @@
+//Zoo Monitoring System
+
+
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+void
+monitorHabitat ()
+{
+
+  string habitat;
+  fstream file;
+  file.open ("habitats.txt");
+
+  while (!file.eof ())
+    {
+      file >> habitat;
+      cout << habitat << endl;
+    }
+  file.close ();
+}
+
+
+void
+monitorAnimal ()
+{
+  string animal;
+  fstream file;
+  file.open ("animals.txt");
+
+  while (!file.eof ())
+    {
+      file >> animal;
+      cout << animal << endl;
+    }
+
+
+  file.close ();
+}
+
+
+int
+main ()
+{
+  int x;
+
+  cout << "Choose the option from the MENU" << endl;
+  cout << "------ Menu ------" << endl;
+  cout << "1. Monitor habitat" << endl;
+  cout << "2. Monitor animal " << endl;
+  cout << "3. Exit" << endl;
+
+  cin >> x;
+}
+
+
+
+-----------------
+Habitats
+-----------------
+Details on penguin habitat
+Details on bird house
+Details on aquarium
+
+Habitat - Penguin
+Temperature: Freezing
+*****Food source: Fish in water running low
+Cleanliness: Passed
+
+Habitat - Bird
+Temperature: Moderate
+Food source: Natural from environment
+Cleanliness: Passed
+
+Habitat - Aquarium
+Temperature: Varies with output temperature
+Food source: Added daily
+*****Cleanliness: Needs cleaning from algae
+
+
+
+
+
+-----------------
+Animals
+-----------------
+Details on lions
+Details on tigers
+Details on bears
+Details on giraffes
+
+Animal - Lion
+Name: Leo
+Age: 5
+*****Health concerns: Cut on left front paw
+Feeding schedule: Twice daily
+
+Animal - Tiger
+Name: Maj
+Age: 15
+Health concerns: None
+Feeding schedule: 3x daily
+
+Animal - Bear
+Name: Baloo
+Age: 1
+Health concerns: None
+*****Feeding schedule: None on record
+
+Animal - Giraffe
+Name: Spots
+Age: 12
+Health concerns: None
+Feeding schedule: Grazing

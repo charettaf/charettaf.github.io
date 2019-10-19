@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h2><strong>Zoo Monitor System</strong></h>
+<p>Programming Code</p>
+
+<pre>
+<code>
+#include <iostream>
+#include <string>
+#include <fstream>
+
+using namespace std;
+
+void
+monitorHabitat ()
+{
+
+  string habitat;
+  fstream file;
+  file.open ("habitats.txt");
+
+  while (!file.eof ())
+    {
+      file >> habitat;
+      cout << habitat << endl;
+    }
+  file.close ();
+}
+
+
+void
+monitorAnimal ()
+{
+  string animal;
+  fstream file;
+  file.open ("animals.txt");
+
+  while (!file.eof ())
+    {
+      file >> animal;
+      cout << animal << endl;
+    }
+
+
+  file.close ();
+}
+
+
+int
+main ()
+{
+  int x;
+
+  cout << "Choose the option from the MENU" << endl;
+  cout << "------ Menu ------" << endl;
+  cout << "1. Monitor habitat" << endl;
+  cout << "2. Monitor animal " << endl;
+  cout << "3. Exit" << endl;
+
+  cin >> x;
+}
+</code>
+</pre>
+
+</body>
+</html>
